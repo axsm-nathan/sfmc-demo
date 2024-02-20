@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <!-- text field section -->
+    <div class="section">
+        <H2>SFMC Testing howdy</H2>
+        <p>First Name</p>
+        <input type="text" class="textField" id="text-field-FirstName" placeholder="Nathan">
+        <br>
+        <p>Last Name</p>
+        <input type="text" class="textField" id="text-field-LastName" placeholder="Goshay">
+        <br>
+        <p>Email Address</p>
+        <input type="email" class="textField" id="text-field-EmailAddress" placeholder="ngoshay@axsome.com">
+        <br>
+        <p>Zipcode</p>
+        <input type="text" class="textField" id="text-field-ZipCode" placeholder="12345">
+        <br>
+        <p>Date of Birth</p>
+        <input type="text" class="textField" id="text-field-DateOfBirth" placeholder="MM/DD/YYYY">
+        <br>
+    </div>
+
+    <!-- tell us more section-->
+    <div class="section">
+        <p>Tell us about yourself</p>
+        <form id="form-about">
+            <input type="radio" class="radio-about" id="radio1" name="sunosi-option" value="prescription-filled">
+            <label for="radio1">SUNOSI prescription was filled</label><br>
+
+            <input type="radio" class="radio-about" id="radio2" name="sunosi-option" value="prescription-not-filled"> 
+            <label for="radio2">SUNOSI prescription not yet filled</label><br>
+
+            <input type="radio" class="radio-about" id="radio3" name="sunosi-option" value="no-prescription">
+            <label for="radio3">I don't have a SUNOSI prescription</label>
+        </form>
+    </div>
+
+
+    <!-- interest section-->
+    <div class="section">
+        <p>What are you interested in?</p>
+        <form id="form-interest">
+            <input type="radio" class="radio-interest" id="interest-radio1" name="interest-option" value="obstructive-sleep-apnea">
+            <label for="interest-radio1">Obstructive sleep apnea</label><br>
+
+            <input type="radio" class="radio-interest" id="interest-radio2" name="interest-option" value="narcolepsy"> 
+            <label for="interest-radio2">Narcolepsy</label><br>
+        </form>
+    </div>
+
+
+    <div class="section" id="opt-in-div">
+        <input type="checkbox" id="checkbox-optIn" name="checkbox-optIn">
+        <label for="checkbox-optIn">
+            By clicking this checkbox, I confirm that I am 18 years of age or older, 
+            or the age of majority in my state. I also agree to receive email communications from Axsome Therapeutics, Inc., 
+            its affiliates, service providers, and co-promotion partners. These communications may include marketing materials, 
+            market research surveys, and information regarding the development of future products, services, and programs. 
+        </label>
+        <label>
+            I have also read and accept the Privacy Notice and Terms of Use. I understand that I can unsubscribe at any time 
+            by clicking on the link provided in the emails I receive.
+        </label>
+    </div>
+
+    <button type="button" id="submit" class="button-submit" onclick="submitClicked()">Submit</button>
+</body>
+</html>

@@ -1,0 +1,16 @@
+body {
+    background-color: rgba(221, 221, 221, 0.821);
+}
+
+.textField {
+    height: 20px;
+    width: 200px;
+}
+
+.section {
+    margin: 10px 5px 15px 5px;
+}
+
+#opt-in-div {
+    width: 400px;
+}
