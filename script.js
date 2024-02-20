@@ -51,7 +51,7 @@ async function callLambdaEndpoint(dataInsertionBody) {
       console.log(response); 
     }
     */
-   const response = JSON.parase(xhr.responseText);
+   const response = JSON.parse(xhr.responseText);
    console.log(response);
   }
 
