@@ -1,5 +1,7 @@
 const LAMBDA_ENDPOINT = "https://zg72s39v3b.execute-api.us-east-2.amazonaws.com/demo-stage/";
 
+var XMLHttpRequest = XMLHttpRequest || require('xmlhttprequest').XMLHttpRequest;
+
 function submitClicked() {
   console.log("submit clicked");
 
@@ -36,26 +38,24 @@ function submitClicked() {
 }
 
 async function callLambdaEndpoint(dataInsertionBody) {
-  console.log("Calling lambda with API gateway");
-
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', LAMBDA_ENDPOINT  );
-
-  xhr.onload = function() {
-    // Request complete, parse JSON response
-    /*
-    if (xhr.status === 200) {
-      const response = JSON.parse(xhr.responseText);
-      
-      // Process response data
-      console.log(response); 
+  const body = JSON.stringify(dataInsertionBody);
+  
+  // Make a request
+  fetch(LAMBDA_ENDPOINT)
+  .then(response => {
+    if(response.ok) {
+      return response.json();
+    } else {
+      throw new Error('Network response was not ok.'); 
     }
-    */
-   const response = JSON.parse(xhr.responseText);
-   console.log(response);
-  }
-
-  xhr.send(JSON.stringify(dataInsertionBody));
+  })
+  .then(data => {
+    // Work with JSON data here
+    console.log(data); 
+  })
+  .catch(error => {
+    console.log('There was a problem with the request:', error);
+  });
 
 }
 
