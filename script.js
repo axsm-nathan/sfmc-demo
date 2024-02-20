@@ -43,12 +43,16 @@ async function callLambdaEndpoint(dataInsertionBody) {
 
   xhr.onload = function() {
     // Request complete, parse JSON response
+    /*
     if (xhr.status === 200) {
       const response = JSON.parse(xhr.responseText);
       
       // Process response data
       console.log(response); 
     }
+    */
+   const response = JSON.parase(xhr.responseText);
+   console.log(response);
   }
 
   xhr.send(JSON.stringify(dataInsertionBody));
