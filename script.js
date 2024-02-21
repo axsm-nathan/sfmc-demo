@@ -38,24 +38,23 @@ function submitClicked() {
 }
 
 async function callLambdaEndpoint(dataInsertionBody) {
-  const body = JSON.stringify(dataInsertionBody);
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(dataInsertionBody)
+  };
   
   // Make a request
-  fetch(LAMBDA_ENDPOINT)
-  .then(response => {
-    if(response.ok) {
-      return response.json();
-    } else {
-      throw new Error('Network response was not ok.'); 
-    }
-  })
-  .then(data => {
-    // Work with JSON data here
-    console.log(data); 
-  })
-  .catch(error => {
-    console.log('There was a problem with the request:', error);
-  });
+  fetch(LAMBDA_ENDPOINT, options)
+    .then(response => response.json())
+    .then(data => {
+      
+      console.log('Success:', data);
+      // work with data here
+
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 
 }
 
