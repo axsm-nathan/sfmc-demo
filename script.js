@@ -8,22 +8,26 @@ function submitClicked() {
 
   // collect data from fields and forms
   dataInsertionBody = {
-    "FirstName": document.getElementById("text-field-FirstName").value,
-    "LastName": document.getElementById("text-field-LastName").value,
-    "EmailAddress": document.getElementById("text-field-EmailAddress").value,
-    "Zipcode": document.getElementById("text-field-ZipCode").value,
-    "DateOfBirth": document.getElementById("text-field-DateOfBirth").value,
-    "AboutYourself": getAboutRadioValue(),
-    "Interest": getInterestRadioValue(),
-    "OptIn": document.getElementById("checkbox-optIn").checked,
-
-    // still need to figure out exactly what each of these values should be
-    "Form Name": "sunosi_form",
-    "Product Name": "sunosi",
-    "Tactic Description": "tactic_description",
-    "Link Url": "link_url",
-    "BU": "bu",
-    "Patient_HCP_Target_Type": "patient_hcp_target_type",
+    "items": [
+      {
+        "FirstName": document.getElementById("text-field-FirstName").value,
+        "LastName": document.getElementById("text-field-LastName").value,
+        "EmailAddress": document.getElementById("text-field-EmailAddress").value,
+        "Zipcode": document.getElementById("text-field-ZipCode").value,
+        "DateOfBirth": document.getElementById("text-field-DateOfBirth").value,
+        "AboutYourself": getAboutRadioValue(),
+        "Interest": getInterestRadioValue(),
+        "OptIn": document.getElementById("checkbox-optIn").checked,
+    
+        // still need to figure out exactly what each of these values should be
+        "Form Name": "sunosi_form",
+        "Product Name": "sunosi",
+        "Tactic Description": "tactic_description",
+        "Link Url": "link_url",
+        "BU": "bu",
+        "Patient_HCP_Target_Type": "patient_hcp_target_type",
+      }
+    ]
   }
 
   console.log("Collected data to send to SFMC:")
