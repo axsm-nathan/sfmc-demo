@@ -45,19 +45,15 @@ async function callLambdaEndpoint(dataInsertionBody) {
   
   // Make a request
   fetch(LAMBDA_ENDPOINT, options)
-    .then((response) => {
-      let responseJson = response.json();
-      console.log("Lambda response OK -- : ", responseJson);
-    })
-    .then(data => {
-
-      console.log('Response:', data);
-      // work with data here
-
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+  .then(response => {
+    if(!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .catch(error => {
+    console.log(error);
+  });
 
 }
 
