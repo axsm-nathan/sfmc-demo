@@ -44,6 +44,10 @@ function submitClicked() {
 async function callLambdaEndpoint(dataInsertionBody) {
   const options = {
     method: 'POST',
+    headers: {
+      "Origin": "https://sfmcdemo.netlify.app", // Required for CORS support to work
+      "Content-Type": "application/json" // Required for POST requests to succeed
+    },
     body: JSON.stringify(dataInsertionBody)
   };
   
