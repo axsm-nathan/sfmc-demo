@@ -1,4 +1,4 @@
-const LAMBDA_ENDPOINT = "https://9j5w9a5j95.execute-api.us-east-2.amazonaws.com/demo-stage/";
+const LAMBDA_ENDPOINT = "https://zg72s39v3b.execute-api.us-east-2.amazonaws.com/demo-stage/";
 
 var XMLHttpRequest = XMLHttpRequest || require('xmlhttprequest').XMLHttpRequest;
 
